@@ -1,6 +1,423 @@
-<!doctype html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FlowSort — Ordena. Avanza.</title><link rel="stylesheet" href="./styles.css"></head><body>
-<nav class="nav"><a class="brand"><img src="../desktop/public/flowsort-logo.png">FlowSort</a><div class="links"><a href="#producto">Producto</a><a href="#metodo">Método</a><a href="#precio">Precios</a></div><a class="nav-login" href="../desktop/">Iniciar sesión</a><button class="menu">☰</button></nav>
-<main><section class="hero"><div class="hero-copy"><div class="eyebrow">OPERACIÓN SIN FRICCIÓN</div><h1>Menos ruido.<br><em>Más avance.</em></h1><p>FlowSort convierte tareas dispersas en un flujo claro, medible y compartido.</p><div class="hero-actions"><a class="button primary" href="#precio">Probar FlowSort gratis <span>→</span></a><a class="text-link" href="#producto">Ver cómo funciona <span>↗</span></a></div><div class="trust"><span>✦ Sin tarjeta</span><span>◌ Configura en 5 min</span></div></div><div class="hero-art"><div class="glow"></div><div class="window"><div class="window-top"><span class="dots">● ● ●</span><span>flow / overview</span><b>•••</b></div><div class="window-body"><aside><strong>FS</strong><small>Inicio</small><small class="selected">Registros</small><small>Plantillas</small><small>Equipo</small></aside><div class="board"><div class="board-head"><div><small>HOY, 18 JUL</small><h3>Tu operación</h3></div><span class="avatar">RP</span></div><div class="metrics"><div><small>ACTIVOS</small><strong>248</strong><i>+12%</i></div><div><small>EN PROCESO</small><strong>36</strong><i>+8%</i></div><div><small>PRIORIZADOS</small><strong>14</strong><i>+24%</i></div></div><div class="activity"><small>FLUJO RECIENTE</small><div><b class="dot gold"></b><span>Solicitud comercial priorizada</span><em>Ahora</em></div><div><b class="dot gray"></b><span>Registro actualizado por Ana</span><em>12 min</em></div><div><b class="dot white"></b><span>Nuevo cliente incorporado</span><em>34 min</em></div></div></div></div></div></div></section>
-<section id="producto" class="statement"><div class="eyebrow">UNA FORMA MÁS CLARA DE TRABAJAR</div><h2>Lo importante,<br><em>siempre visible.</em></h2><p>Centraliza, prioriza y actúa desde un solo lugar.</p></section>
-<section id="metodo" class="features"><article><span>01</span><h3>Centraliza</h3><p>Clientes, solicitudes y tareas en una vista compartida.</p></article><article><span>02</span><h3>Prioriza</h3><p>Las señales correctas aparecen antes que el ruido.</p></article><article><span>03</span><h3>Avanza</h3><p>Convierte cada pendiente en una siguiente acción clara.</p></article></section>
-<section id="precio" class="cta"><div><div class="eyebrow">EMPIEZA HOY</div><h2>Tu equipo merece<br><em>más claridad.</em></h2></div><a class="button primary" href="../desktop/">Crear mi workspace <span>→</span></a></section></main><footer><span>© 2026 FlowSort</span><span>Ordena. Avanza.</span></footer></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title data-i18n="title">FlowSort — Sort. Advance.</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <a class="brand"
+        ><img src="../desktop/public/flowsort-logo.png" />FlowSort</a
+      >
+      <div class="links">
+        <a href="#producto" data-i18n="nav.product">Product</a>
+        <a href="#metodo" data-i18n="nav.method">Method</a>
+        <a href="#precio" data-i18n="nav.pricing">Pricing</a>
+      </div>
+      <div class="nav-right">
+        <div class="lang-selector">
+          <button class="lang-btn" id="lang-btn">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-code">EN</span>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown">
+            <button class="lang-option" data-lang="en">
+              <span class="lang-flag">🇺🇸</span> English
+            </button>
+            <button class="lang-option" data-lang="es">
+              <span class="lang-flag">🇪🇸</span> Español
+            </button>
+          </div>
+        </div>
+        <a class="nav-login" href="../desktop/" data-i18n="nav.login">Log in</a>
+      </div>
+      <button class="menu">☰</button>
+    </nav>
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <div class="eyebrow" data-i18n="hero.eyebrow">
+            FRICTIONLESS OPERATIONS
+          </div>
+          <h1>
+            <span data-i18n="hero.title-part1">Less noise.</span><br />
+            <em data-i18n="hero.title-part2">More progress.</em>
+          </h1>
+          <p data-i18n="hero.desc">
+            FlowSort turns scattered tasks into a clear, measurable, and shared
+            flow.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#precio">
+              <span data-i18n="hero.btn.try-text">Try FlowSort for free</span>
+              <span>→</span>
+            </a>
+            <a class="text-link" href="#producto">
+              <span data-i18n="hero.btn.how-text">See how it works</span>
+              <span>↗</span>
+            </a>
+          </div>
+          <div class="trust">
+            <span data-i18n="hero.trust.card">✦ No credit card</span>
+            <span data-i18n="hero.trust.setup">◌ Set up in 5 min</span>
+          </div>
+        </div>
+        <div class="hero-art">
+          <div class="glow"></div>
+          <div class="window">
+            <div class="window-top">
+              <span class="dots">● ● ●</span><span>flow / overview</span
+              ><b>•••</b>
+            </div>
+            <div class="window-body">
+              <aside>
+                <strong>FS</strong>
+                <small data-i18n="mock.aside.home">Home</small>
+                <small class="selected" data-i18n="mock.aside.records"
+                  >Records</small
+                >
+                <small data-i18n="mock.aside.templates">Templates</small>
+                <small data-i18n="mock.aside.team">Team</small>
+              </aside>
+              <div class="board">
+                <div class="board-head">
+                  <div>
+                    <small data-i18n="mock.board.date">TODAY, FEB 30</small>
+                    <h3 data-i18n="mock.board.title">Your operation</h3>
+                  </div>
+                  <span class="avatar">RP</span>
+                </div>
+                <div class="metrics">
+                  <div>
+                    <small data-i18n="mock.metrics.active">ACTIVE</small>
+                    <strong>248</strong>
+                    <i>+12%</i>
+                  </div>
+                  <div>
+                    <small data-i18n="mock.metrics.progress">IN PROGRESS</small>
+                    <strong>36</strong>
+                    <i>+8%</i>
+                  </div>
+                  <div>
+                    <small data-i18n="mock.metrics.prioritized"
+                      >PRIORITIZED</small
+                    >
+                    <strong>14</strong>
+                    <i>+24%</i>
+                  </div>
+                </div>
+                <div class="activity">
+                  <small data-i18n="mock.activity.title">RECENT ACTIVITY</small>
+                  <div>
+                    <b class="dot gold"></b>
+                    <span data-i18n="mock.activity.item1"
+                      >Sales request prioritized</span
+                    >
+                    <em data-i18n="mock.activity.item1_time">Now</em>
+                  </div>
+                  <div>
+                    <b class="dot gray"></b>
+                    <span data-i18n="mock.activity.item2"
+                      >Record updated by Ana</span
+                    >
+                    <em data-i18n="mock.activity.item2_time">12 min</em>
+                  </div>
+                  <div>
+                    <b class="dot white"></b>
+                    <span data-i18n="mock.activity.item3"
+                      >New client onboarded</span
+                    >
+                    <em data-i18n="mock.activity.item3_time">34 min</em>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="replica-text" data-i18n="hero.replica">(HTML Replica)</p>
+        </div>
+      </section>
+      <section id="producto" class="statement">
+        <div class="eyebrow" data-i18n="statement.eyebrow">
+          A CLEARER WAY TO WORK
+        </div>
+        <h2>
+          <span data-i18n="statement.title-part1">What matters,</span><br />
+          <em data-i18n="statement.title-part2">always visible.</em>
+        </h2>
+        <p data-i18n="statement.desc">
+          Centralize, prioritize, and act from a single place.
+        </p>
+      </section>
+      <section id="metodo" class="features">
+        <article>
+          <span>01</span>
+          <h3 data-i18n="features.f1.title">Centralize</h3>
+          <p data-i18n="features.f1.desc">
+            Clients, requests, and tasks in a shared view.
+          </p>
+        </article>
+        <article>
+          <span>02</span>
+          <h3 data-i18n="features.f2.title">Prioritize</h3>
+          <p data-i18n="features.f2.desc">
+            The right signals appear before the noise.
+          </p>
+        </article>
+        <article>
+          <span>03</span>
+          <h3 data-i18n="features.f3.title">Advance</h3>
+          <p data-i18n="features.f3.desc">
+            Turn every pending task into a clear next action.
+          </p>
+        </article>
+      </section>
+      <section id="precio" class="cta">
+        <div>
+          <div class="eyebrow" data-i18n="cta.eyebrow">START TODAY</div>
+          <h2>
+            <span data-i18n="cta.title-text">Your business deserves</span><br />
+            <em id="dynamic-cta-text" data-i18n="cta.title-word">more.</em>
+          </h2>
+        </div>
+        <a class="button primary" href="../desktop/">
+          <span data-i18n="cta.btn-text">Create my workspace</span>
+          <span>→</span>
+        </a>
+      </section>
+    </main>
+    <footer>
+      <span>© 2026 FlowSort</span>
+      <span data-i18n="footer.tagline">Sort. Advance. FlowSort.</span>
+    </footer>
+    <script>
+      (function () {
+        // Translation Dictionary
+        const translations = {
+          en: {
+            title: "FlowSort — Sort. Advance.",
+            "nav.product": "Product",
+            "nav.method": "Method",
+            "nav.pricing": "Pricing",
+            "nav.login": "Log in",
+            "hero.eyebrow": "FULL SERVICE",
+            "hero.title-part1": "Less complex.",
+            "hero.title-part2": "More progress.",
+            "hero.desc":
+              "FlowSort turns scattered tasks into a clear, measurable, and shared flow.",
+            "hero.btn.try-text": "Try FlowSort for free",
+            "hero.btn.how-text": "See how it works",
+            "hero.trust.card": "✦ No credit card",
+            "hero.trust.setup": "◌ Register in 5 min",
+            "mock.aside.home": "Home",
+            "mock.aside.records": "Records",
+            "mock.aside.templates": "Templates",
+            "mock.aside.team": "Team",
+            "mock.board.date": "TODAY, FEB 30",
+            "mock.board.title": "Your operation",
+            "mock.metrics.active": "ACTIVE",
+            "mock.metrics.progress": "IN PROGRESS",
+            "mock.metrics.prioritized": "PRIORITIZED",
+            "mock.activity.title": "RECENT ACTIVITY",
+            "mock.activity.item1": "Sales request prioritized",
+            "mock.activity.item1_time": "Now",
+            "mock.activity.item2": "Record updated by Ana",
+            "mock.activity.item2_time": "12 min",
+            "mock.activity.item3": "New client onboarded",
+            "mock.activity.item3_time": "34 min",
+            "hero.replica": "(HTML Replica)",
+            "statement.eyebrow": "A CLEARER WAY TO WORK",
+            "statement.title-part1": "What matters,",
+            "statement.title-part2": "always visible.",
+            "statement.desc":
+              "Centralize, prioritize, and act from a single place.",
+            "features.f1.title": "Centralize",
+            "features.f1.desc":
+              "Clients, requests, and tasks in a shared view.",
+            "features.f2.title": "Prioritize",
+            "features.f2.desc": "The right signals appear before the noise.",
+            "features.f3.title": "Advance",
+            "features.f3.desc":
+              "Turn every pending task into a clear next action.",
+            "cta.eyebrow": "START TODAY",
+            "cta.title-text": "Your business deserves",
+            "cta.title-word": "more.",
+            "cta.btn-text": "Create my workspace",
+            "footer.tagline": "Sort. Advance. FlowSort.",
+          },
+          es: {
+            title: "FlowSort — Ordena. Avanza.",
+            "nav.product": "Producto",
+            "nav.method": "Método",
+            "nav.pricing": "Precios",
+            "nav.login": "Iniciar sesión",
+            "hero.eyebrow": "SERVICIO COMPLETO",
+            "hero.title-part1": "Menos complejo.",
+            "hero.title-part2": "Más avance.",
+            "hero.desc":
+              "FlowSort convierte tareas dispersas en un flujo claro, medible y compartido.",
+            "hero.btn.try-text": "Probar FlowSort gratis",
+            "hero.btn.how-text": "Ver cómo funciona",
+            "hero.trust.card": "✦ Sin tarjeta",
+            "hero.trust.setup": "◌ Regístrate en 5 min",
+            "mock.aside.home": "Inicio",
+            "mock.aside.records": "Registros",
+            "mock.aside.templates": "Plantillas",
+            "mock.aside.team": "Equipo",
+            "mock.board.date": "HOY, 30 FEB",
+            "mock.board.title": "Tu operación",
+            "mock.metrics.active": "ACTIVOS",
+            "mock.metrics.progress": "EN PROCESO",
+            "mock.metrics.prioritized": "PRIORIZADOS",
+            "mock.activity.title": "FLUJO RECIENTE",
+            "mock.activity.item1": "Solicitud comercial priorizada",
+            "mock.activity.item1_time": "Ahora",
+            "mock.activity.item2": "Registro actualizado por Ana",
+            "mock.activity.item2_time": "12 min",
+            "mock.activity.item3": "Nuevo cliente incorporado",
+            "mock.activity.item3_time": "34 min",
+            "hero.replica": "(Réplica en HTML)",
+            "statement.eyebrow": "UNA FORMA MÁS CLARA DE TRABAJAR",
+            "statement.title-part1": "Lo importante,",
+            "statement.title-part2": "siempre visible.",
+            "statement.desc":
+              "Centraliza, prioriza y actúa desde un solo lugar.",
+            "features.f1.title": "Centraliza",
+            "features.f1.desc":
+              "Clientes, solicitudes y tareas en una vista compartida.",
+            "features.f2.title": "Prioriza",
+            "features.f2.desc":
+              "Las señales correctas aparecen antes que el ruido.",
+            "features.f3.title": "Avanza",
+            "features.f3.desc":
+              "Convierte cada pendiente en una siguiente acción clara.",
+            "cta.eyebrow": "EMPIEZA HOY",
+            "cta.title-text": "Tu negocio merece",
+            "cta.title-word": "más.",
+            "cta.btn-text": "Crear mi workspace",
+            "footer.tagline": "Ordena. Avanza. FlowSort.",
+          },
+        };
+
+        const word = document.getElementById("dynamic-cta-text");
+        const cta = document.querySelector(".cta");
+        if (!word || !cta) return;
+
+        let isTransitioning = false;
+
+        function swapText(newText) {
+          if (word.textContent === newText || isTransitioning) return;
+          isTransitioning = true;
+
+          if (newText !== "FlowSort.") {
+            word.classList.remove("glow-active");
+          }
+
+          word.classList.add("swap-out");
+          setTimeout(() => {
+            word.textContent = newText;
+            word.classList.remove("swap-out");
+            word.classList.add("swap-in");
+            if (newText === "FlowSort.") {
+              word.classList.add("glow-active");
+            }
+            // Force layout reflow
+            word.offsetHeight;
+            word.classList.remove("swap-in");
+            isTransitioning = false;
+          }, 400);
+        }
+
+        function checkScroll() {
+          const rect = cta.getBoundingClientRect();
+          if (rect.top < window.innerHeight * 0.5) {
+            swapText("FlowSort.");
+          } else {
+            const currentLang = document.documentElement.lang || "en";
+            const defaultWord = currentLang === "es" ? "más." : "more.";
+            swapText(defaultWord);
+          }
+        }
+
+        window.addEventListener("scroll", checkScroll, { passive: true });
+        checkScroll();
+
+        // Language Selector Logic
+        const langBtn = document.getElementById("lang-btn");
+        const langDropdown = document.getElementById("lang-dropdown");
+        const langOptions = document.querySelectorAll(".lang-option");
+
+        function setLanguage(lang) {
+          document.documentElement.lang = lang;
+
+          // Translate title in head
+          document.title = translations[lang]["title"];
+
+          // Translate data-i18n elements
+          document.querySelectorAll("[data-i18n]").forEach((elem) => {
+            const key = elem.getAttribute("data-i18n");
+            // Do not overwrite dynamic cta text if it is currently "FlowSort"
+            if (key === "cta.title-word" && word.textContent === "FlowSort.") {
+              return;
+            }
+            if (translations[lang] && translations[lang][key]) {
+              elem.textContent = translations[lang][key];
+            }
+          });
+
+          // Update Lang Button UI
+          const flag = lang === "es" ? "🇪🇸" : "🇺🇸";
+          const code = lang.toUpperCase();
+          langBtn.querySelector(".lang-flag").textContent = flag;
+          langBtn.querySelector(".lang-code").textContent = code;
+
+          // Update active dropdown class
+          langOptions.forEach((opt) => {
+            if (opt.getAttribute("data-lang") === lang) {
+              opt.classList.add("selected");
+            } else {
+              opt.classList.remove("selected");
+            }
+          });
+
+          localStorage.setItem("preferred-lang", lang);
+          // Re-evaluate scroll dynamic text word on language change
+          checkScroll();
+        }
+
+        // Toggle Dropdown
+        langBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          langDropdown.classList.toggle("show");
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener("click", () => {
+          langDropdown.classList.remove("show");
+        });
+
+        // Add option listeners
+        langOptions.forEach((opt) => {
+          opt.addEventListener("click", () => {
+            const selectedLang = opt.getAttribute("data-lang");
+            if (document.documentElement.lang === selectedLang) return;
+            document.body.classList.add("lang-fade-out");
+            setTimeout(() => {
+              setLanguage(selectedLang);
+              document.body.classList.remove("lang-fade-out");
+              document.body.classList.add("lang-fade-in");
+              setTimeout(() => {
+                document.body.classList.remove("lang-fade-in");
+              }, 250);
+            }, 250);
+          });
+        });
+
+        // Initialize with default (EN) or saved preference
+        const savedLang = localStorage.getItem("preferred-lang") || "en";
+        setLanguage(savedLang);
+      })();
+    </script>
+  </body>
+</html>
