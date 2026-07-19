@@ -1,0 +1,1 @@
+{"extends":"@react-native/typescript-config","compilerOptions":{"strict":true,"baseUrl":".","paths":{"@flowsort/shared":["../../packages/shared/src/index.ts"]}},"include":["src/**/*.ts","src/**/*.tsx","App.tsx","index.js"]}
