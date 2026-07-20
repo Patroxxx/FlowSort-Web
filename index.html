@@ -4,17 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title data-i18n="title">FlowSort — Sort. Advance.</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./assets/styles.css" />
   </head>
   <body>
     <nav class="nav">
-      <a class="brand"
-        ><img src="../desktop/public/flowsort-logo.png" />FlowSort</a
-      >
+      <a class="brand"><img src="./assets/flowsort-logo.png" />FlowSort</a>
       <div class="links">
         <a href="#producto" data-i18n="nav.product">Product</a>
         <a href="#metodo" data-i18n="nav.method">Method</a>
-        <a href="#precio" data-i18n="nav.pricing">Pricing</a>
+        <a href="#precios" data-i18n="nav.pricing">Pricing</a>
+        <a href="./desktop/" data-i18n="nav.desktop">Desktop</a>
       </div>
       <div class="nav-right">
         <div class="lang-selector">
@@ -31,7 +30,7 @@
             </button>
           </div>
         </div>
-        <a class="nav-login" href="../desktop/" data-i18n="nav.login">Log in</a>
+        <a class="nav-login" href="./login/" data-i18n="nav.login">Log in</a>
       </div>
       <button class="menu">☰</button>
     </nav>
@@ -50,7 +49,7 @@
             flow.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#precio">
+            <a class="button primary" href="#precios">
               <span data-i18n="hero.btn.try-text">Try FlowSort for free</span>
               <span>→</span>
             </a>
@@ -73,7 +72,10 @@
             </div>
             <div class="window-body">
               <aside>
-                <strong>FS</strong>
+                <div class="aside-brand">
+                  <img src="./assets/flowsort-logo.png" class="aside-logo" />
+                  <strong>FS</strong>
+                </div>
                 <small data-i18n="mock.aside.home">Home</small>
                 <small class="selected" data-i18n="mock.aside.records"
                   >Records</small
@@ -181,10 +183,101 @@
             <em id="dynamic-cta-text" data-i18n="cta.title-word">more.</em>
           </h2>
         </div>
-        <a class="button primary" href="../desktop/">
+        <a class="button primary" href="./signup/">
           <span data-i18n="cta.btn-text">Create my workspace</span>
           <span>→</span>
         </a>
+      </section>
+      <!-- PRICING SECTION -->
+      <section id="precios" class="pricing">
+        <div class="pricing-header">
+          <div class="eyebrow" data-i18n="pricing.eyebrow">SIMPLE PRICING</div>
+          <h2>
+            <span data-i18n="pricing.title-part1">One license.</span><br />
+            <em data-i18n="pricing.title-part2">Everything included.</em>
+          </h2>
+          <p data-i18n="pricing.subtitle">No surprises. Cancel anytime.</p>
+        </div>
+        <div class="pricing-cards">
+          <!-- Starter -->
+          <div class="pricing-card">
+            <div class="plan-name" data-i18n="pricing.starter.name">
+              Starter
+            </div>
+            <div class="plan-price">
+              <span class="plan-amount">$12</span>
+              <span class="plan-period" data-i18n="pricing.per-month">/mo</span>
+            </div>
+            <p class="plan-desc" data-i18n="pricing.starter.desc">
+              Perfect for freelancers and solo operators.
+            </p>
+            <ul class="plan-features">
+              <li data-i18n="pricing.starter.f1">Up to 3 workspaces</li>
+              <li data-i18n="pricing.starter.f2">500 records/month</li>
+              <li data-i18n="pricing.starter.f3">Basic flow views</li>
+              <li data-i18n="pricing.starter.f4">Email support</li>
+            </ul>
+            <a
+              class="button plan-btn"
+              href="./signup/"
+              data-i18n="pricing.btn-start"
+              >Get started →</a
+            >
+          </div>
+          <!-- Pro -->
+          <div class="pricing-card pricing-card--featured">
+            <div class="plan-badge" data-i18n="pricing.pro.badge">
+              Most popular
+            </div>
+            <div class="plan-name" data-i18n="pricing.pro.name">Pro</div>
+            <div class="plan-price">
+              <span class="plan-amount">$39</span>
+              <span class="plan-period" data-i18n="pricing.per-month">/mo</span>
+            </div>
+            <p class="plan-desc" data-i18n="pricing.pro.desc">
+              For growing teams that need full visibility.
+            </p>
+            <ul class="plan-features">
+              <li data-i18n="pricing.pro.f1">Unlimited workspaces</li>
+              <li data-i18n="pricing.pro.f2">Unlimited records</li>
+              <li data-i18n="pricing.pro.f3">Priority views & filters</li>
+              <li data-i18n="pricing.pro.f4">Team collaboration</li>
+              <li data-i18n="pricing.pro.f5">Priority support</li>
+            </ul>
+            <a
+              class="button primary plan-btn"
+              href="./signup/"
+              data-i18n="pricing.btn-start"
+              >Get started →</a
+            >
+          </div>
+          <!-- Business -->
+          <div class="pricing-card">
+            <div class="plan-name" data-i18n="pricing.business.name">
+              Business
+            </div>
+            <div class="plan-price">
+              <span class="plan-amount">$89</span>
+              <span class="plan-period" data-i18n="pricing.per-month">/mo</span>
+            </div>
+            <p class="plan-desc" data-i18n="pricing.business.desc">
+              Enterprise-grade control for large organizations.
+            </p>
+            <ul class="plan-features">
+              <li data-i18n="pricing.business.f1">Everything in Pro</li>
+              <li data-i18n="pricing.business.f2">Custom integrations</li>
+              <li data-i18n="pricing.business.f3">Advanced analytics</li>
+              <li data-i18n="pricing.business.f4">Dedicated manager</li>
+              <li data-i18n="pricing.business.f5">SLA guarantee</li>
+            </ul>
+            <a
+              class="button plan-btn"
+              href="./signup/"
+              data-i18n="pricing.btn-contact"
+              >Contact us →</a
+            >
+          </div>
+        </div>
       </section>
     </main>
     <footer>
@@ -201,6 +294,7 @@
             "nav.method": "Method",
             "nav.pricing": "Pricing",
             "nav.login": "Log in",
+            "nav.desktop": "Desktop App",
             "hero.eyebrow": "FULL SERVICE",
             "hero.title-part1": "Less complex.",
             "hero.title-part2": "More progress.",
@@ -244,7 +338,37 @@
             "cta.title-text": "Your business deserves",
             "cta.title-word": "more.",
             "cta.btn-text": "Create my workspace",
-            "footer.tagline": "Sort. Advance. FlowSort.",
+            "footer.tagline": "Sort. Advance. Do it on FlowSort.",
+            "pricing.eyebrow": "SIMPLE PRICING",
+            "pricing.title-part1": "One license.",
+            "pricing.title-part2": "Everything included.",
+            "pricing.subtitle": "No surprises. Cancel anytime.",
+            "pricing.per-month": "/mo",
+            "pricing.btn-start": "Get started →",
+            "pricing.btn-contact": "Contact us →",
+            "pricing.starter.name": "Starter",
+            "pricing.starter.desc":
+              "Perfect for freelancers and solo operators.",
+            "pricing.starter.f1": "Up to 3 workspaces",
+            "pricing.starter.f2": "500 records/month",
+            "pricing.starter.f3": "Basic flow views",
+            "pricing.starter.f4": "Email support",
+            "pricing.pro.badge": "Most popular",
+            "pricing.pro.name": "Pro",
+            "pricing.pro.desc": "For growing teams that need full visibility.",
+            "pricing.pro.f1": "Unlimited workspaces",
+            "pricing.pro.f2": "Unlimited records",
+            "pricing.pro.f3": "Priority views & filters",
+            "pricing.pro.f4": "Team collaboration",
+            "pricing.pro.f5": "Priority support",
+            "pricing.business.name": "Business",
+            "pricing.business.desc":
+              "Enterprise-grade control for large organizations.",
+            "pricing.business.f1": "Everything in Pro",
+            "pricing.business.f2": "Custom integrations",
+            "pricing.business.f3": "Advanced analytics",
+            "pricing.business.f4": "Dedicated manager",
+            "pricing.business.f5": "SLA guarantee",
           },
           es: {
             title: "FlowSort — Ordena. Avanza.",
@@ -252,6 +376,7 @@
             "nav.method": "Método",
             "nav.pricing": "Precios",
             "nav.login": "Iniciar sesión",
+            "nav.desktop": "App de Escritorio",
             "hero.eyebrow": "SERVICIO COMPLETO",
             "hero.title-part1": "Menos complejo.",
             "hero.title-part2": "Más avance.",
@@ -296,7 +421,38 @@
             "cta.title-text": "Tu negocio merece",
             "cta.title-word": "más.",
             "cta.btn-text": "Crear mi workspace",
-            "footer.tagline": "Ordena. Avanza. FlowSort.",
+            "footer.tagline": "Ordena. Avanza. Hazlo en FlowSort.",
+            "pricing.eyebrow": "PRECIOS SIMPLES",
+            "pricing.title-part1": "Una licencia.",
+            "pricing.title-part2": "Todo incluido.",
+            "pricing.subtitle": "Sin sorpresas. Cancela cuando quieras.",
+            "pricing.per-month": "/mes",
+            "pricing.btn-start": "Empezar →",
+            "pricing.btn-contact": "Contáctanos →",
+            "pricing.starter.name": "Starter",
+            "pricing.starter.desc":
+              "Perfecto para freelancers y operadores individuales.",
+            "pricing.starter.f1": "Hasta 3 workspaces",
+            "pricing.starter.f2": "500 registros/mes",
+            "pricing.starter.f3": "Vistas de flujo básicas",
+            "pricing.starter.f4": "Soporte por email",
+            "pricing.pro.badge": "Más popular",
+            "pricing.pro.name": "Pro",
+            "pricing.pro.desc":
+              "Para equipos en crecimiento que necesitan visibilidad total.",
+            "pricing.pro.f1": "Workspaces ilimitados",
+            "pricing.pro.f2": "Registros ilimitados",
+            "pricing.pro.f3": "Vistas y filtros prioritarios",
+            "pricing.pro.f4": "Colaboración en equipo",
+            "pricing.pro.f5": "Soporte prioritario",
+            "pricing.business.name": "Business",
+            "pricing.business.desc":
+              "Control empresarial para grandes organizaciones.",
+            "pricing.business.f1": "Todo lo de Pro",
+            "pricing.business.f2": "Integraciones personalizadas",
+            "pricing.business.f3": "Análisis avanzados",
+            "pricing.business.f4": "Gerente dedicado",
+            "pricing.business.f5": "Garantía SLA",
           },
         };
 
@@ -417,6 +573,41 @@
         // Initialize with default (EN) or saved preference
         const savedLang = localStorage.getItem("preferred-lang") || "en";
         setLanguage(savedLang);
+
+        // Page Transition Interceptor
+        document.querySelectorAll("a").forEach((link) => {
+          const href = link.getAttribute("href");
+          if (
+            !href ||
+            href.startsWith("#") ||
+            href.startsWith("javascript:") ||
+            link.target === "_blank" ||
+            href.includes("mailto:") ||
+            href.includes("tel:")
+          )
+            return;
+
+          try {
+            const url = new URL(link.href, window.location.href);
+            if (url.origin !== window.location.origin) return;
+          } catch (e) {
+            return;
+          }
+
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            document.body.classList.add("page-exit");
+            setTimeout(() => {
+              window.location.href = href;
+            }, 250);
+          });
+        });
+
+        window.addEventListener("pageshow", (event) => {
+          if (event.persisted) {
+            document.body.classList.remove("page-exit");
+          }
+        });
       })();
     </script>
   </body>

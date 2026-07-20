@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title data-i18n="title">FlowSort — Create Workspace</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <a class="brand" href="../">
+        <img src="../assets/flowsort-logo.png" />FlowSort
+      </a>
+      <div class="nav-right">
+        <div class="lang-selector">
+          <button class="lang-btn" id="lang-btn">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-code">EN</span>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown">
+            <button class="lang-option" data-lang="en">
+              <span class="lang-flag">🇺🇸</span> English
+            </button>
+            <button class="lang-option" data-lang="es">
+              <span class="lang-flag">🇪🇸</span> Español
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main class="auth-container">
+      <div class="auth-card">
+        <div class="auth-header">
+          <img src="../assets/flowsort-logo.png" class="auth-logo" />
+          <h2 data-i18n="auth.signup-title">Create your workspace</h2>
+          <p data-i18n="auth.signup-subtitle">
+            Encrypt your private project space client-side.
+          </p>
+        </div>
+        <div id="alert-container" class="alert-box hide"></div>
+        <form id="signup-form" class="auth-form">
+          <div class="form-group">
+            <label for="name" data-i18n="auth.name-label">Full name</label>
+            <input type="text" id="name" required placeholder="John Doe" />
+          </div>
+          <div class="form-group">
+            <label for="email" data-i18n="auth.email-label"
+              >Email address</label
+            >
+            <input
+              type="email"
+              id="email"
+              required
+              placeholder="name@company.com"
+            />
+          </div>
+          <div class="form-group">
+            <label for="password" data-i18n="auth.password-label"
+              >Workspace Password</label
+            >
+            <input
+              type="password"
+              id="password"
+              required
+              placeholder="••••••••"
+            />
+          </div>
+          <div class="form-group">
+            <label
+              for="confirm-password"
+              data-i18n="auth.confirm-password-label"
+              >Confirm Password</label
+            >
+            <input
+              type="password"
+              id="confirm-password"
+              required
+              placeholder="••••••••"
+            />
+          </div>
+          <button
+            type="submit"
+            class="button primary auth-btn"
+            data-i18n="auth.signup-btn"
+          >
+            Encrypt & Create Workspace →
+          </button>
+        </form>
+        <div class="auth-footer">
+          <span data-i18n="auth.has-account">Already have a workspace?</span>
+          <a href="../login/" data-i18n="auth.login-link">Log in here</a>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <span>© 2026 FlowSort</span>
+      <span data-i18n="footer.tagline">Sort. Advance. Do it on FlowSort.</span>
+    </footer>
+
+    <script>
+      (function () {
+        // Translation Dictionary
+        const translations = {
+          en: {
+            title: "FlowSort — Create Workspace",
+            "auth.signup-title": "Create your workspace",
+            "auth.signup-subtitle":
+              "Encrypt your private project space client-side.",
+            "auth.name-label": "Full name",
+            "auth.email-label": "Email address",
+            "auth.password-label": "Workspace Password",
+            "auth.confirm-password-label": "Confirm Password",
+            "auth.signup-btn": "Encrypt & Create Workspace →",
+            "auth.has-account": "Already have a workspace?",
+            "auth.login-link": "Log in here",
+            "footer.tagline": "Sort. Advance. Do it on FlowSort.",
+            "alert.pass-mismatch": "Passwords do not match. Please verify.",
+            "alert.encrypting": "Deriving PBKDF2 keys & encrypting...",
+          },
+          es: {
+            title: "FlowSort — Crear Workspace",
+            "auth.signup-title": "Crea tu workspace",
+            "auth.signup-subtitle":
+              "Cifra tu espacio privado de proyectos en el cliente.",
+            "auth.name-label": "Nombre completo",
+            "auth.email-label": "Dirección de correo",
+            "auth.password-label": "Contraseña del Workspace",
+            "auth.confirm-password-label": "Confirmar Contraseña",
+            "auth.signup-btn": "Cifrar y Crear Workspace →",
+            "auth.has-account": "¿Ya tienes un workspace?",
+            "auth.login-link": "Inicia sesión aquí",
+            "footer.tagline": "Ordena. Avanza. Hazlo en FlowSort.",
+            "alert.pass-mismatch":
+              "Las contraseñas no coinciden. Por favor, verifica.",
+            "alert.encrypting": "Derivando llaves PBKDF2 y cifrando...",
+          },
+        };
+
+        const form = document.getElementById("signup-form");
+        const alertBox = document.getElementById("alert-container");
+
+        // Helper to show messages
+        function showAlert(msgKey, type = "error") {
+          const lang = document.documentElement.lang || "en";
+          const message = translations[lang][msgKey] || msgKey;
+          alertBox.textContent = message;
+          alertBox.className = `alert-box alert-${type}`;
+        }
+
+        // PBKDF2 Key derivation helper
+        async function deriveKey(password, salt) {
+          const encoder = new TextEncoder();
+          const baseKey = await crypto.subtle.importKey(
+            "raw",
+            encoder.encode(password),
+            { name: "PBKDF2" },
+            false,
+            ["deriveKey", "deriveBits"],
+          );
+          return crypto.subtle.deriveKey(
+            {
+              name: "PBKDF2",
+              salt: salt,
+              iterations: 100000,
+              hash: "SHA-256",
+            },
+            baseKey,
+            { name: "AES-GCM", length: 256 },
+            false,
+            ["encrypt"],
+          );
+        }
+
+        // Helper: Uint8Array to Hex string
+        function bytesToHex(bytes) {
+          return Array.from(bytes, (byte) =>
+            byte.toString(16).padStart(2, "0"),
+          ).join("");
+        }
+
+        // Form Submit Handler
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const name = document.getElementById("name").value.trim();
+          const email = document
+            .getElementById("email")
+            .value.trim()
+            .toLowerCase();
+          const password = document.getElementById("password").value;
+          const confirmPassword =
+            document.getElementById("confirm-password").value;
+
+          if (password !== confirmPassword) {
+            showAlert("alert.pass-mismatch", "error");
+            return;
+          }
+
+          try {
+            showAlert("alert.encrypting", "info");
+
+            // Generate cryptographically secure random salt (16 bytes) and IV (12 bytes)
+            const salt = crypto.getRandomValues(new Uint8Array(16));
+            const iv = crypto.getRandomValues(new Uint8Array(12));
+
+            // Derive AES key using password + PBKDF2
+            const aesKey = await deriveKey(password, salt);
+
+            // Prepare secret payload to encrypt
+            const encoder = new TextEncoder();
+            const payload = JSON.stringify({
+              name: name,
+              email: email,
+              created_at: Date.now(),
+            });
+
+            // Encrypt the payload using AES-GCM
+            const ciphertext = await crypto.subtle.encrypt(
+              { name: "AES-GCM", iv: iv },
+              aesKey,
+              encoder.encode(payload),
+            );
+
+            // Save encrypted structure in localStorage (as Hex)
+            const authObject = {
+              email: email,
+              salt: bytesToHex(salt),
+              iv: bytesToHex(iv),
+              ciphertext: bytesToHex(new Uint8Array(ciphertext)),
+            };
+
+            localStorage.setItem("flowsort_auth", JSON.stringify(authObject));
+
+            // Redirect back to login with success parameter
+            setTimeout(() => {
+              window.location.href = "../login/?signup=success";
+            }, 800);
+          } catch (err) {
+            showAlert("Encryption failed. Please try again.", "error");
+          }
+        });
+
+        // Language Selector Logic
+        const langBtn = document.getElementById("lang-btn");
+        const langDropdown = document.getElementById("lang-dropdown");
+        const langOptions = document.querySelectorAll(".lang-option");
+
+        function setLanguage(lang) {
+          document.documentElement.lang = lang;
+          document.title = translations[lang]["title"];
+
+          document.querySelectorAll("[data-i18n]").forEach((elem) => {
+            const key = elem.getAttribute("data-i18n");
+            if (translations[lang] && translations[lang][key]) {
+              elem.textContent = translations[lang][key];
+            }
+          });
+
+          // Update active language UI
+          const flag = lang === "es" ? "🇪🇸" : "🇺🇸";
+          const code = lang.toUpperCase();
+          langBtn.querySelector(".lang-flag").textContent = flag;
+          langBtn.querySelector(".lang-code").textContent = code;
+
+          langOptions.forEach((opt) => {
+            if (opt.getAttribute("data-lang") === lang) {
+              opt.classList.add("selected");
+            } else {
+              opt.classList.remove("selected");
+            }
+          });
+
+          localStorage.setItem("preferred-lang", lang);
+
+          // Re-translate active alert if visible
+          if (!alertBox.classList.contains("hide")) {
+            const currentText = alertBox.textContent;
+            let matchingKey = null;
+            const prevLang = lang === "es" ? "en" : "es";
+            for (const key in translations[prevLang]) {
+              if (translations[prevLang][key] === currentText) {
+                matchingKey = key;
+                break;
+              }
+            }
+            if (matchingKey) {
+              showAlert(
+                matchingKey,
+                alertBox.className.split(" ")[1].split("-")[1],
+              );
+            }
+          }
+        }
+
+        langBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          langDropdown.classList.toggle("show");
+        });
+
+        document.addEventListener("click", () => {
+          langDropdown.classList.remove("show");
+        });
+
+        langOptions.forEach((opt) => {
+          opt.addEventListener("click", () => {
+            const selectedLang = opt.getAttribute("data-lang");
+            if (document.documentElement.lang === selectedLang) return;
+            document.body.classList.add("lang-fade-out");
+            setTimeout(() => {
+              setLanguage(selectedLang);
+              document.body.classList.remove("lang-fade-out");
+              document.body.classList.add("lang-fade-in");
+              setTimeout(() => {
+                document.body.classList.remove("lang-fade-in");
+              }, 250);
+            }, 250);
+          });
+        });
+
+        const savedLang = localStorage.getItem("preferred-lang") || "en";
+        setLanguage(savedLang);
+
+        // Page Transition Interceptor
+        document.querySelectorAll("a").forEach((link) => {
+          const href = link.getAttribute("href");
+          if (
+            !href ||
+            href.startsWith("#") ||
+            href.startsWith("javascript:") ||
+            link.target === "_blank" ||
+            href.includes("mailto:") ||
+            href.includes("tel:")
+          )
+            return;
+
+          try {
+            const url = new URL(link.href, window.location.href);
+            if (url.origin !== window.location.origin) return;
+          } catch (e) {
+            return;
+          }
+
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            document.body.classList.add("page-exit");
+            setTimeout(() => {
+              window.location.href = href;
+            }, 250);
+          });
+        });
+
+        window.addEventListener("pageshow", (event) => {
+          if (event.persisted) {
+            document.body.classList.remove("page-exit");
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title data-i18n="title">FlowSort — 404 Not Found</title>
+    <link rel="stylesheet" href="./assets/styles.css" />
+    <style>
+      /* Ajuste específico para centrar el contenido del 404 */
+      .error-container {
+        min-height: calc(100vh - 78px - 80px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .error-code {
+        font: 700 clamp(100px, 15vw, 180px)/1 "Space Grotesk";
+        letter-spacing: -0.06em;
+        background: linear-gradient(135deg, #f1efe9, #9ca2aa);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 20px;
+        position: relative;
+        display: inline-block;
+      }
+
+      .error-code::after {
+        content: "";
+        position: absolute;
+        width: 120%;
+        height: 120%;
+        top: -10%;
+        left: -10%;
+        background: radial-gradient(
+          circle,
+          rgba(212, 192, 106, 0.05) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .error-title {
+        font: 700 clamp(24px, 4vw, 36px)/1.2 "Space Grotesk";
+        color: #f1efe9;
+        margin-bottom: 16px;
+      }
+
+      .error-desc {
+        color: #9ca2aa;
+        font-size: 16px;
+        max-width: 480px;
+        line-height: 1.6;
+        margin-bottom: 36px;
+      }
+
+      .error-btn {
+        padding: 14px 28px;
+        font-weight: 600;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <a class="brand" href="./">
+        <img src="./assets/flowsort-logo.png" />FlowSort
+      </a>
+      <div class="nav-right">
+        <div class="lang-selector">
+          <button class="lang-btn" id="lang-btn">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-code">EN</span>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown">
+            <button class="lang-option" data-lang="en">
+              <span class="lang-flag">🇺🇸</span> English
+            </button>
+            <button class="lang-option" data-lang="es">
+              <span class="lang-flag">🇪🇸</span> Español
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <main class="error-container">
+      <div class="error-code">404</div>
+      <h2 class="error-title" data-i18n="error.title">Page not found</h2>
+      <p class="error-desc" data-i18n="error.desc">
+        The link you followed may be broken, or the page may have been removed.
+        Double check the URL and try again.
+      </p>
+      <a href="./" class="button primary error-btn" data-i18n="error.btn">
+        Go back home →
+      </a>
+    </main>
+    <footer>
+      <span>© 2026 FlowSort</span>
+      <span data-i18n="footer.tagline">Sort. Advance. Do it on FlowSort.</span>
+    </footer>
+
+    <script>
+      (function () {
+        // Translation Dictionary
+        const translations = {
+          en: {
+            title: "FlowSort — 404 Not Found",
+            "error.title": "Page not found",
+            "error.desc":
+              "The link you followed may be broken, or the page may have been removed. Double check the URL and try again.",
+            "error.btn": "Go back home →",
+            "footer.tagline": "Sort. Advance. Do it on FlowSort.",
+          },
+          es: {
+            title: "FlowSort — 404 No Encontrado",
+            "error.title": "Página no encontrada",
+            "error.desc":
+              "El enlace que seguiste podría estar roto, o la página podría haber sido eliminada. Verifica la URL e inténtalo de nuevo.",
+            "error.btn": "Volver al inicio →",
+            "footer.tagline": "Ordena. Avanza. Hazlo en FlowSort.",
+          },
+        };
+
+        // Language Selector Logic
+        const langBtn = document.getElementById("lang-btn");
+        const langDropdown = document.getElementById("lang-dropdown");
+        const langOptions = document.querySelectorAll(".lang-option");
+
+        function setLanguage(lang) {
+          document.documentElement.lang = lang;
+          document.title = translations[lang]["title"];
+
+          document.querySelectorAll("[data-i18n]").forEach((elem) => {
+            const key = elem.getAttribute("data-i18n");
+            if (translations[lang] && translations[lang][key]) {
+              elem.textContent = translations[lang][key];
+            }
+          });
+
+          // Update active language UI
+          const flag = lang === "es" ? "🇪🇸" : "🇺🇸";
+          const code = lang.toUpperCase();
+          langBtn.querySelector(".lang-flag").textContent = flag;
+          langBtn.querySelector(".lang-code").textContent = code;
+
+          langOptions.forEach((opt) => {
+            if (opt.getAttribute("data-lang") === lang) {
+              opt.classList.add("selected");
+            } else {
+              opt.classList.remove("selected");
+            }
+          });
+
+          localStorage.setItem("preferred-lang", lang);
+        }
+
+        langBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          langDropdown.classList.toggle("show");
+        });
+
+        document.addEventListener("click", () => {
+          langDropdown.classList.remove("show");
+        });
+
+        langOptions.forEach((opt) => {
+          opt.addEventListener("click", () => {
+            const selectedLang = opt.getAttribute("data-lang");
+            if (document.documentElement.lang === selectedLang) return;
+            document.body.classList.add("lang-fade-out");
+            setTimeout(() => {
+              setLanguage(selectedLang);
+              document.body.classList.remove("lang-fade-out");
+              document.body.classList.add("lang-fade-in");
+              setTimeout(() => {
+                document.body.classList.remove("lang-fade-in");
+              }, 250);
+            }, 250);
+          });
+        });
+
+        const savedLang = localStorage.getItem("preferred-lang") || "en";
+        setLanguage(savedLang);
+
+        // Page Transition Interceptor
+        document.querySelectorAll("a").forEach((link) => {
+          const href = link.getAttribute("href");
+          if (
+            !href ||
+            href.startsWith("#") ||
+            href.startsWith("javascript:") ||
+            link.target === "_blank" ||
+            href.includes("mailto:") ||
+            href.includes("tel:")
+          )
+            return;
+
+          try {
+            const url = new URL(link.href, window.location.href);
+            if (url.origin !== window.location.origin) return;
+          } catch (e) {
+            return;
+          }
+
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            document.body.classList.add("page-exit");
+            setTimeout(() => {
+              window.location.href = href;
+            }, 250);
+          });
+        });
+
+        window.addEventListener("pageshow", (event) => {
+          if (event.persisted) {
+            document.body.classList.remove("page-exit");
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

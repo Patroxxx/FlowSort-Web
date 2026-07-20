@@ -1,1 +1,362 @@
-<div id="root"></div><script type="module" src="/src/main.tsx"></script>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="title">FlowSort — Desktop App</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <script src="https://unpkg.com/lucide@latest"></script>
+  </head>
+  <body>
+    <nav class="nav">
+      <a class="brand" href="../">
+        <img src="../assets/flowsort-logo.png" />FlowSort
+      </a>
+      <div class="nav-right">
+        <div class="lang-selector">
+          <button class="lang-btn" id="lang-btn">
+            <span class="lang-flag">🇺🇸</span>
+            <span class="lang-code">EN</span>
+          </button>
+          <div class="lang-dropdown" id="lang-dropdown">
+            <button class="lang-option" data-lang="en">
+              <span class="lang-flag">🇺🇸</span> English
+            </button>
+            <button class="lang-option" data-lang="es">
+              <span class="lang-flag">🇪🇸</span> Español
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main class="download-container">
+      <!-- Hero Presentation -->
+      <section class="download-hero">
+        <span class="eyebrow" data-i18n="desktop.hero.eyebrow"
+          >NATIVE WORKSPACE</span
+        >
+        <h1 data-i18n="desktop.hero.title">FlowSort for Desktop</h1>
+        <p class="subtitle" data-i18n="desktop.hero.subtitle">
+          Experience ultra-fast loading speeds, offline capabilities, and zero
+          browser distractions. Your static workspace, compiled natively.
+        </p>
+
+        <!-- Dynamic OS Suggester -->
+        <div class="auto-detect-wrap" id="auto-detect-wrap">
+          <div class="auto-detect-card">
+            <span class="auto-detect-icon" id="detect-icon">
+              <img
+                id="detect-os-logo"
+                src="https://api.iconify.design/simple-icons:apple.svg?color=%23f1efe9"
+                class="os-logo"
+                alt="macOS"
+              />
+            </span>
+            <div class="auto-detect-info">
+              <small data-i18n="desktop.detect.eyebrow"
+                >RECOMMENDED FOR YOUR SYSTEM</small
+              >
+              <h3 id="detect-os-name">FlowSort for macOS</h3>
+            </div>
+            <a
+              href="#"
+              class="button primary"
+              id="detect-btn"
+              data-i18n="desktop.btn.download"
+              >Download App →</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Platforms Grid -->
+      <section class="platforms-section">
+        <h2 class="section-title" data-i18n="desktop.platforms.title">
+          Download for all platforms
+        </h2>
+        <div class="platforms-grid">
+          <!-- macOS Card -->
+          <div class="platform-card">
+            <div class="card-head">
+              <span class="platform-icon"
+                ><img
+                  src="https://api.iconify.design/simple-icons:apple.svg?color=%23f1efe9"
+                  class="os-logo"
+                  alt="Apple"
+              /></span>
+              <h3>macOS</h3>
+            </div>
+            <p data-i18n="desktop.platform.mac.desc">
+              Universal bundle supporting both Apple Silicon (M1/M2/M3) and
+              Intel chips.
+            </p>
+            <div class="card-actions">
+              <a href="#" class="button outline">.DMG (Universal)</a>
+            </div>
+          </div>
+
+          <!-- Windows Card -->
+          <div class="platform-card">
+            <div class="card-head">
+              <span class="platform-icon"
+                ><img
+                  src="https://api.iconify.design/simple-icons:windows.svg?color=%23f1efe9"
+                  class="os-logo"
+                  alt="Windows"
+              /></span>
+              <h3>Windows</h3>
+            </div>
+            <p data-i18n="desktop.platform.win.desc">
+              Standard executable installer for Windows 10 and 11 (64-bit).
+            </p>
+            <div class="card-actions">
+              <a href="#" class="button outline">.EXE (Installer)</a>
+            </div>
+          </div>
+
+          <!-- Linux Card -->
+          <div class="platform-card">
+            <div class="card-head">
+              <span class="platform-icon"
+                ><img
+                  src="https://api.iconify.design/simple-icons:linux.svg?color=%23f1efe9"
+                  class="os-logo"
+                  alt="Linux"
+              /></span>
+              <h3>Linux</h3>
+            </div>
+            <p data-i18n="desktop.platform.linux.desc">
+              Standalone AppImage and Debian package for native distributions.
+            </p>
+            <div class="card-actions">
+              <a href="#" class="button outline">.AppImage</a>
+              <a href="#" class="button outline">.DEB</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Premium Features Grid -->
+      <section class="desktop-features-section">
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon"><i data-lucide="shield-check"></i></div>
+            <h3 data-i18n="desktop.features.f1.title">100% Private Data</h3>
+            <p data-i18n="desktop.features.f1.desc">
+              All database schemas and workspace files are encrypted client-side
+              using AES-GCM and stored locally on your disk.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i data-lucide="zap"></i></div>
+            <h3 data-i18n="desktop.features.f2.title">Maximum Performance</h3>
+            <p data-i18n="desktop.features.f2.desc">
+              Runs directly on your system CPU. Instant start-up speeds and
+              ultra-low memory footprint compared to browser tabs.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon"><i data-lucide="wifi-off"></i></div>
+            <h3 data-i18n="desktop.features.f3.title">Offline Continuity</h3>
+            <p data-i18n="desktop.features.f3.desc">
+              Access your pipelines and modify your board records offline. Syncs
+              automatically when you reconnect.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 FlowSort</span>
+      <span data-i18n="footer.tagline">Sort. Advance. Do it on FlowSort.</span>
+    </footer>
+
+    <script>
+      (function () {
+        // Translation Dictionary
+        const translations = {
+          en: {
+            title: "FlowSort — Desktop App",
+            "desktop.hero.eyebrow": "NATIVE WORKSPACE",
+            "desktop.hero.title": "FlowSort for Desktop",
+            "desktop.hero.subtitle":
+              "Experience ultra-fast loading speeds, offline capabilities, and zero browser distractions. Your static workspace, compiled natively.",
+            "desktop.detect.eyebrow": "RECOMMENDED FOR YOUR SYSTEM",
+            "desktop.btn.download": "Download App →",
+            "desktop.platforms.title": "Download for all platforms",
+            "desktop.platform.mac.desc":
+              "Universal bundle supporting both Apple Silicon (M1/M2/M3) and Intel chips.",
+            "desktop.platform.win.desc":
+              "Standard executable installer for Windows 10 and 11 (64-bit).",
+            "desktop.platform.linux.desc":
+              "Standalone AppImage and Debian package for native distributions.",
+            "desktop.features.f1.title": "100% Private Data",
+            "desktop.features.f1.desc":
+              "All database schemas and workspace files are encrypted client-side using AES-GCM and stored locally on your disk.",
+            "desktop.features.f2.title": "Maximum Performance",
+            "desktop.features.f2.desc":
+              "Runs directly on your system CPU. Instant start-up speeds and ultra-low memory footprint compared to browser tabs.",
+            "desktop.features.f3.title": "Offline Continuity",
+            "desktop.features.f3.desc":
+              "Access your pipelines and modify your board records offline. Syncs automatically when you reconnect.",
+            "footer.tagline": "Sort. Advance. Do it on FlowSort.",
+          },
+          es: {
+            title: "FlowSort — App de Escritorio",
+            "desktop.hero.eyebrow": "WORKSPACE NATIVO",
+            "desktop.hero.title": "FlowSort para Escritorio",
+            "desktop.hero.subtitle":
+              "Experimenta velocidades de carga ultra rápidas, capacidades sin conexión y cero distracciones del navegador. Tu espacio de trabajo estático, compilado nativamente.",
+            "desktop.detect.eyebrow": "RECOMENDADO PARA TU SISTEMA",
+            "desktop.btn.download": "Descargar App →",
+            "desktop.platforms.title": "Descargar para todas las plataformas",
+            "desktop.platform.mac.desc":
+              "Paquete universal compatible con chips Apple Silicon (M1/M2/M3) e Intel.",
+            "desktop.platform.win.desc":
+              "Instalador ejecutable estándar para Windows 10 y 11 (64 bits).",
+            "desktop.platform.linux.desc":
+              "AppImage independiente y paquete Debian para distribuciones nativas.",
+            "desktop.features.f1.title": "Datos 100% Privados",
+            "desktop.features.f1.desc":
+              "Todos los esquemas de bases de datos y archivos se cifran del lado del cliente usando AES-GCM y se guardan localmente en tu disco.",
+            "desktop.features.f2.title": "Rendimiento Máximo",
+            "desktop.features.f2.desc":
+              "Se ejecuta directamente en la CPU de tu sistema. Arranque instantáneo y consumo de memoria ultra bajo en comparación con pestañas de navegador.",
+            "desktop.features.f3.title": "Continuidad sin Conexión",
+            "desktop.features.f3.desc":
+              "Accede a tus flujos y modifica tus registros sin conexión a internet. Se sincroniza automáticamente al reconectarse.",
+            "footer.tagline": "Ordena. Avanza. Hazlo en FlowSort.",
+          },
+        };
+
+        const langBtn = document.getElementById("lang-btn");
+        const langDropdown = document.getElementById("lang-dropdown");
+        const langOptions = document.querySelectorAll(".lang-option");
+
+        function setLanguage(lang) {
+          document.documentElement.lang = lang;
+          document.title = translations[lang]["title"];
+          const t = translations[lang] || translations["en"];
+
+          // Apply translations to all data-i18n elements
+          document.querySelectorAll("[data-i18n]").forEach((el) => {
+            const key = el.getAttribute("data-i18n");
+            if (t[key]) el.innerHTML = t[key];
+          });
+
+          langBtn.querySelector(".lang-flag").textContent =
+            lang === "es" ? "🇪🇸" : "🇺🇸";
+          langBtn.querySelector(".lang-code").textContent = lang.toUpperCase();
+          langOptions.forEach((opt) => {
+            opt.classList.toggle(
+              "selected",
+              opt.getAttribute("data-lang") === lang,
+            );
+          });
+          localStorage.setItem("preferred-lang", lang);
+
+          // Update OS suggestion header dynamically on language change
+          updateOsDetectUI();
+        }
+
+        langBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          langDropdown.classList.toggle("show");
+        });
+
+        document.addEventListener("click", () => {
+          langDropdown.classList.remove("show");
+        });
+
+        langOptions.forEach((opt) => {
+          opt.addEventListener("click", () => {
+            const selectedLang = opt.getAttribute("data-lang");
+            if (document.documentElement.lang === selectedLang) return;
+            document.body.classList.add("lang-fade-out");
+            setTimeout(() => {
+              setLanguage(selectedLang);
+              document.body.classList.remove("lang-fade-out");
+              document.body.classList.add("lang-fade-in");
+              setTimeout(() => {
+                document.body.classList.remove("lang-fade-in");
+              }, 250);
+            }, 250);
+          });
+        });
+
+        // OS Detection logic
+        let detectedOS = "macOS";
+        const OS_LOGOS = {
+          macOS: "https://api.iconify.design/simple-icons:apple.svg?color=%23f1efe9",
+          Windows: "https://api.iconify.design/simple-icons:windows.svg?color=%23f1efe9",
+          Linux: "https://api.iconify.design/simple-icons:linux.svg?color=%23f1efe9",
+        };
+
+        function detectOS() {
+          const ua = window.navigator.userAgent.toLowerCase();
+          if (ua.includes("win")) detectedOS = "Windows";
+          else if (ua.includes("mac")) detectedOS = "macOS";
+          else if (ua.includes("linux")) detectedOS = "Linux";
+        }
+
+        function updateOsDetectUI() {
+          const isEs = document.documentElement.lang === "es";
+          document.getElementById("detect-os-name").textContent = isEs
+            ? `FlowSort para ${detectedOS}`
+            : `FlowSort for ${detectedOS}`;
+
+          const img = document.getElementById("detect-os-logo");
+          if (img) {
+            img.src = OS_LOGOS[detectedOS] || OS_LOGOS.macOS;
+            img.alt = detectedOS;
+          }
+        }
+
+        // Initialize
+        detectOS();
+        const savedLang = localStorage.getItem("preferred-lang") || "en";
+        setLanguage(savedLang);
+
+        // Page Transition Interceptor
+        document.querySelectorAll("a").forEach((link) => {
+          const href = link.getAttribute("href");
+          if (
+            !href ||
+            href.startsWith("#") ||
+            href.startsWith("javascript:") ||
+            link.target === "_blank" ||
+            href.includes("mailto:") ||
+            href.includes("tel:")
+          )
+            return;
+
+          try {
+            const url = new URL(link.href, window.location.href);
+            if (url.origin !== window.location.origin) return;
+          } catch (e) {
+            return;
+          }
+
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            document.body.classList.add("page-exit");
+            setTimeout(() => {
+              window.location.href = href;
+            }, 250);
+          });
+        });
+
+        window.addEventListener("pageshow", (event) => {
+          if (event.persisted) {
+            document.body.classList.remove("page-exit");
+          }
+        });
+      })();
+
+      // Init Lucide after IIFE so DOM is ready
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
