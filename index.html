@@ -1,25 +1,32 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title data-i18n="title">FlowSort — Sort. Advance.</title>
+    <meta name="description" content="FlowSort centraliza solicitudes, prioridades y operaciones en un flujo claro y medible." />
+    <meta property="og:title" content="FlowSort — Ordena. Avanza." />
+    <meta property="og:description" content="Convierte solicitudes dispersas en trabajo organizado." />
+    <meta property="og:image" content="./assets/flowsort-logo.png" />
+    <meta name="theme-color" content="#0b0d10" />
     <link rel="stylesheet" href="./assets/styles.css" />
   </head>
   <body>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
     <nav class="nav">
-      <a class="brand"><img src="./assets/flowsort-logo.png" />FlowSort</a>
+      <a class="brand" href="./" aria-label="FlowSort, inicio"><img src="./assets/flowsort-logo.png" alt="" />FlowSort</a>
       <button class="menu" type="button" aria-label="Menu">☰</button>
       <div class="links">
         <a href="#producto" data-i18n="nav.product">Product</a>
         <a href="#metodo" data-i18n="nav.method">Method</a>
         <a href="#precios" data-i18n="nav.pricing">Pricing</a>
+        <a href="#portal" data-i18n="nav.portal">Client portal</a>
       </div>
       <div class="nav-right">
         <div class="lang-selector">
           <button class="lang-btn" id="lang-btn">
-            <span class="lang-flag">🇺🇸</span>
-            <span class="lang-code">EN</span>
+            <span class="lang-flag">🇪🇸</span>
+            <span class="lang-code">ES</span>
           </button>
           <div class="lang-dropdown" id="lang-dropdown">
             <button class="lang-option" data-lang="en">
@@ -33,7 +40,7 @@
         <div id="nav-auth"></div>
       </div>
     </nav>
-    <main>
+    <main id="contenido">
       <section class="hero">
         <div class="hero-copy">
           <div class="eyebrow" data-i18n="hero.eyebrow">
@@ -48,7 +55,7 @@
             flow.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#precios">
+            <a class="button primary" href="./signup/">
               <span data-i18n="hero.btn.try-text">Try FlowSort for free</span>
               <span>→</span>
             </a>
@@ -85,7 +92,7 @@
               <div class="board">
                 <div class="board-head">
                   <div>
-                    <small data-i18n="mock.board.date">TODAY, FEB 30</small>
+                    <small data-i18n="mock.board.date">TODAY</small>
                     <h3 data-i18n="mock.board.title">Your operation</h3>
                   </div>
                   <span class="avatar">RP</span>
@@ -174,6 +181,37 @@
           </p>
         </article>
       </section>
+      <section class="use-cases" aria-labelledby="use-cases-title">
+        <div class="section-heading">
+          <div class="eyebrow" data-i18n="usecases.eyebrow">BUILT FOR YOUR FLOW</div>
+          <h2 id="use-cases-title"><span data-i18n="usecases.title1">One system.</span><br /><em data-i18n="usecases.title2">Any operation.</em></h2>
+          <p data-i18n="usecases.desc">Choose a template and start with the fields your team already understands.</p>
+        </div>
+        <div class="use-case-grid">
+          <article class="use-case-card"><span class="use-case-icon">⌁</span><div><h3 data-i18n="usecases.restaurant">Restaurant</h3><p data-i18n="usecases.restaurantDesc">QR requests from table to kitchen.</p></div><span class="use-case-flow">Request <b>→</b> Ready</span></article>
+          <article class="use-case-card"><span class="use-case-icon">＋</span><div><h3 data-i18n="usecases.clinic">Clinic</h3><p data-i18n="usecases.clinicDesc">Capture symptoms and appointments.</p></div><span class="use-case-flow">Intake <b>→</b> Care</span></article>
+          <article class="use-case-card"><span class="use-case-icon">⌂</span><div><h3 data-i18n="usecases.workshop">Workshop</h3><p data-i18n="usecases.workshopDesc">Track every vehicle from arrival to handoff.</p></div><span class="use-case-flow">Entry <b>→</b> Done</span></article>
+        </div>
+      </section>
+      <section id="portal" class="portal-banner">
+        <div><div class="eyebrow" data-i18n="portal.eyebrow">CLIENT PORTAL</div><h2 data-i18n="portal.title">Let clients follow progress without an account.</h2><p data-i18n="portal.desc">Share a secure link and keep every update in one place.</p></div>
+        <a class="button" href="./signup/" data-i18n="portal.btn">Create a portal →</a>
+      </section>
+      <section class="faq" aria-labelledby="faq-title">
+        <div class="section-heading">
+          <div class="eyebrow" data-i18n="faq.eyebrow">FAQ</div>
+          <h2 id="faq-title" data-i18n="faq.title">Everything clear before you start.</h2>
+        </div>
+        <div class="faq-list">
+          <details open><summary data-i18n="faq.q1">Can I adapt FlowSort to my business?</summary><p data-i18n="faq.a1">Yes. Choose a sector template, edit its fields and keep only the flow your team needs.</p></details>
+          <details><summary data-i18n="faq.q2">Do clients need an account?</summary><p data-i18n="faq.a2">No. Share a secure tracking link through the client portal.</p></details>
+          <details><summary data-i18n="faq.q3">Can I start without a card?</summary><p data-i18n="faq.a3">Yes. Create your workspace and test the core flow before choosing a plan.</p></details>
+        </div>
+      </section>
+      <section class="lite-download">
+        <div class="lite-copy"><div class="eyebrow" data-i18n="lite.eyebrow">FLOW SORT LITE</div><h2 data-i18n="lite.title">Your flow, always within reach.</h2><p data-i18n="lite.desc">A focused desktop workspace for the essentials. Download free, sign in, and keep moving.</p><div class="lite-points"><span><b>01</b><small data-i18n="lite.point1">Free forever</small></span><span><b>02</b><small data-i18n="lite.point2">Desktop speed</small></span><span><b>03</b><small data-i18n="lite.point3">Core tools included</small></span></div></div>
+        <div class="lite-action"><div class="lite-orbit"><img src="./assets/flowsort-logo.png" alt="" /></div><a class="button primary" href="./desktop/" data-i18n="lite.btn">Download Lite →</a><small data-i18n="lite.note">macOS · Windows · Linux</small></div>
+      </section>
       <section id="precio" class="cta">
         <div>
           <div class="eyebrow" data-i18n="cta.eyebrow">START TODAY</div>
@@ -218,7 +256,7 @@
             </ul>
             <a
               class="button plan-btn"
-              href="./signup/"
+              href="./checkout/?plan=starter"
               data-i18n="pricing.btn-start"
               >Get started →</a
             >
@@ -245,7 +283,7 @@
             </ul>
             <a
               class="button primary plan-btn"
-              href="./signup/"
+              href="./checkout/?plan=pro"
               data-i18n="pricing.btn-start"
               >Get started →</a
             >
@@ -271,7 +309,7 @@
             </ul>
             <a
               class="button plan-btn"
-              href="./signup/"
+              href="./checkout/?plan=business"
               data-i18n="pricing.btn-contact"
               >Contact us →</a
             >
@@ -282,6 +320,8 @@
     <footer>
       <span>© 2026 FlowSort</span>
       <span data-i18n="footer.tagline">Sort. Advance. FlowSort.</span>
+      <a href="#portal" data-i18n="footer.portal">Client portal</a>
+      <a href="mailto:hola@flowsort.app" data-i18n="footer.contact">Contact</a>
     </footer>
     <script>
       (function () {
@@ -292,6 +332,7 @@
             "nav.product": "Product",
             "nav.method": "Method",
             "nav.pricing": "Pricing",
+            "nav.portal": "Client portal",
             "nav.login": "Log in",
             "nav.panel": "Panel",
             "nav.logout": "Log out",
@@ -308,7 +349,7 @@
             "mock.aside.records": "Records",
             "mock.aside.templates": "Templates",
             "mock.aside.team": "Team",
-            "mock.board.date": "TODAY, FEB 30",
+            "mock.board.date": "TODAY",
             "mock.board.title": "Your operation",
             "mock.metrics.active": "ACTIVE",
             "mock.metrics.progress": "IN PROGRESS",
@@ -334,11 +375,43 @@
             "features.f3.title": "Advance",
             "features.f3.desc":
               "Turn every pending task into a clear next action.",
+            "usecases.eyebrow": "BUILT FOR YOUR FLOW",
+            "usecases.title1": "One system.",
+            "usecases.title2": "Any operation.",
+            "usecases.desc": "Choose a template and start with the fields your team already understands.",
+            "usecases.restaurant": "Restaurant",
+            "usecases.restaurantDesc": "QR requests from table to kitchen.",
+            "usecases.clinic": "Clinic",
+            "usecases.clinicDesc": "Capture symptoms and appointments.",
+            "usecases.workshop": "Workshop",
+            "usecases.workshopDesc": "Track every vehicle from arrival to handoff.",
+            "portal.eyebrow": "CLIENT PORTAL",
+            "portal.title": "Let clients follow progress without an account.",
+            "portal.desc": "Share a secure link and keep every update in one place.",
+            "portal.btn": "Create a portal →",
+            "footer.portal": "Client portal",
             "cta.eyebrow": "START TODAY",
             "cta.title-text": "Your business deserves",
             "cta.title-word": "more.",
             "cta.btn-text": "Create my workspace",
             "footer.tagline": "Sort. Advance. Do it on FlowSort.",
+            "footer.contact": "Contact",
+            "faq.eyebrow": "FAQ",
+            "faq.title": "Everything clear before you start.",
+            "faq.q1": "Can I adapt FlowSort to my business?",
+            "faq.a1": "Yes. Choose a sector template, edit its fields and keep only the flow your team needs.",
+            "faq.q2": "Do clients need an account?",
+            "faq.a2": "No. Share a secure tracking link through the client portal.",
+            "faq.q3": "Can I start without a card?",
+            "faq.a3": "Yes. Create your workspace and test the core flow before choosing a plan.",
+            "lite.eyebrow": "FLOW SORT LITE",
+            "lite.title": "Your flow, always within reach.",
+            "lite.desc": "A focused desktop workspace for the essentials. Download free, sign in, and keep moving.",
+            "lite.point1": "Free forever",
+            "lite.point2": "Desktop speed",
+            "lite.point3": "Core tools included",
+            "lite.btn": "Download Lite →",
+            "lite.note": "macOS · Windows · Linux",
             "pricing.eyebrow": "SIMPLE PRICING",
             "pricing.title-part1": "One license.",
             "pricing.title-part2": "Everything included.",
@@ -375,6 +448,7 @@
             "nav.product": "Producto",
             "nav.method": "Método",
             "nav.pricing": "Precios",
+            "nav.portal": "Portal del cliente",
             "nav.login": "Iniciar sesión",
             "nav.panel": "Panel",
             "nav.logout": "Cerrar sesión",
@@ -391,7 +465,7 @@
             "mock.aside.records": "Registros",
             "mock.aside.templates": "Plantillas",
             "mock.aside.team": "Equipo",
-            "mock.board.date": "HOY, 30 FEB",
+            "mock.board.date": "HOY",
             "mock.board.title": "Tu operación",
             "mock.metrics.active": "ACTIVOS",
             "mock.metrics.progress": "EN PROCESO",
@@ -418,11 +492,43 @@
             "features.f3.title": "Avanza",
             "features.f3.desc":
               "Convierte cada pendiente en una siguiente acción clara.",
+            "usecases.eyebrow": "DISEÑADO PARA TU FLUJO",
+            "usecases.title1": "Un sistema.",
+            "usecases.title2": "Cualquier operación.",
+            "usecases.desc": "Elige una plantilla y empieza con los campos que tu equipo ya conoce.",
+            "usecases.restaurant": "Restaurante",
+            "usecases.restaurantDesc": "Solicitudes por QR, de la mesa a cocina.",
+            "usecases.clinic": "Clínica",
+            "usecases.clinicDesc": "Captura síntomas y citas sin fricción.",
+            "usecases.workshop": "Taller",
+            "usecases.workshopDesc": "Sigue cada vehículo desde recepción hasta entrega.",
+            "portal.eyebrow": "PORTAL DEL CLIENTE",
+            "portal.title": "Permite seguir el avance sin crear una cuenta.",
+            "portal.desc": "Comparte un enlace seguro y concentra cada actualización.",
+            "portal.btn": "Crear portal →",
+            "footer.portal": "Portal del cliente",
             "cta.eyebrow": "EMPIEZA HOY",
             "cta.title-text": "Tu negocio merece",
             "cta.title-word": "más.",
             "cta.btn-text": "Crear mi workspace",
             "footer.tagline": "Ordena. Avanza. Hazlo en FlowSort.",
+            "footer.contact": "Contacto",
+            "faq.eyebrow": "PREGUNTAS FRECUENTES",
+            "faq.title": "Todo claro antes de empezar.",
+            "faq.q1": "¿Puedo adaptar FlowSort a mi negocio?",
+            "faq.a1": "Sí. Elige una plantilla sectorial, edita sus campos y conserva solo el flujo que necesita tu equipo.",
+            "faq.q2": "¿Los clientes necesitan una cuenta?",
+            "faq.a2": "No. Comparte un enlace seguro mediante el portal del cliente.",
+            "faq.q3": "¿Puedo empezar sin tarjeta?",
+            "faq.a3": "Sí. Crea tu workspace y prueba el flujo principal antes de elegir un plan.",
+            "lite.eyebrow": "FLOW SORT LITE",
+            "lite.title": "Tu flujo, siempre a tu alcance.",
+            "lite.desc": "Un workspace de escritorio enfocado en lo esencial. Descarga gratis, inicia sesión y avanza.",
+            "lite.point1": "Gratis para siempre",
+            "lite.point2": "Velocidad de escritorio",
+            "lite.point3": "Herramientas esenciales",
+            "lite.btn": "Descargar Lite →",
+            "lite.note": "macOS · Windows · Linux",
             "pricing.eyebrow": "PRECIOS SIMPLES",
             "pricing.title-part1": "Una licencia.",
             "pricing.title-part2": "Todo incluido.",
@@ -572,8 +678,19 @@
         });
 
         // Initialize with default (EN) or saved preference
-        const savedLang = localStorage.getItem("preferred-lang") || "en";
+        const browserLang = (navigator.language || "").toLowerCase().startsWith("es") ? "es" : "en";
+        const savedLang = localStorage.getItem("preferred-lang") || browserLang;
         setLanguage(savedLang);
+
+        // Keep the mockup credible: always show today's localized date.
+        const dateLabel = document.querySelector('[data-i18n="mock.board.date"]');
+        if (dateLabel) {
+          const updateDate = () => {
+            const locale = document.documentElement.lang === "es" ? "es-ES" : "en-US";
+            dateLabel.textContent = new Intl.DateTimeFormat(locale, { weekday: "short", month: "short", day: "numeric" }).format(new Date()).toUpperCase();
+          };
+          updateDate();
+        }
 
         // Page Transition Interceptor
         document.querySelectorAll("a").forEach((link) => {

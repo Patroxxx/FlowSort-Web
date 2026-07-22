@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>FlowSort Lite — Descargas</title><link rel="stylesheet" href="../assets/styles.css" />
+    <style>
+      .downloads{max-width:980px;margin:0 auto;padding:7rem 1.25rem}.download-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.5rem}.download-card{padding:1.8rem;border:1px solid rgba(255,255,255,.14);border-radius:22px;background:rgba(255,255,255,.045)}.download-card h2{margin:.7rem 0}.download-card p{color:#a6a9b1;min-height:52px;line-height:1.5}.download-card .button{width:100%;text-align:center}.download-note{color:#858992;margin-top:2rem}@media(max-width:720px){.download-grid{grid-template-columns:1fr}.downloads{padding-top:4rem}}
+    </style>
+  </head>
+  <body>
+    <nav class="nav"><a class="brand" href="../"><img src="../assets/flowsort-logo.png" alt="" />FlowSort</a><a class="nav-login" href="../login/">Iniciar sesión</a></nav>
+    <main class="downloads"><div class="eyebrow">FLOW SORT LITE</div><h1>Descarga tu workspace.</h1><p class="download-note">Elige tu plataforma. Descarga gratuita para empezar.</p>
+      <div class="download-grid">
+        <article class="download-card"><span>●</span><h2>macOS</h2><p>Apple Silicon e Intel · instalador universal.</p><a class="button primary" href="#download-start" data-platform="macOS">Descargar .DMG →</a></article>
+        <article class="download-card"><span>⊞</span><h2>Windows</h2><p>Windows 10 o superior · instalador seguro.</p><a class="button primary" href="#download-start" data-platform="Windows">Descargar .EXE →</a></article>
+        <article class="download-card"><span>⌁</span><h2>Linux</h2><p>Distribuciones compatibles · AppImage y DEB.</p><a class="button primary" href="#download-start" data-platform="Linux">Descargar Lite →</a></article>
+      </div>
+      <p id="download-start" class="download-note" hidden></p>
+    </main>
+    <script>document.querySelectorAll('[data-platform]').forEach(btn=>btn.addEventListener('click',e=>{e.preventDefault();const note=document.querySelector('#download-start');note.hidden=false;note.textContent=`FlowSort Lite para ${btn.dataset.platform} estará disponible al conectar el instalador. Tu selección quedó guardada.`;localStorage.setItem('flowsort_download_platform',btn.dataset.platform);}));</script>
+  </body>
+</html>

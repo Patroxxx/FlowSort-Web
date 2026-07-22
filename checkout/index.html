@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>FlowSort — Activar plan</title>
+    <link rel="stylesheet" href="../assets/styles.css" />
+    <style>
+      .checkout { max-width: 980px; margin: 0 auto; padding: 7rem 1.25rem 5rem; }
+      .checkout-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:1.25rem; margin-top:2rem; }
+      .checkout-card { padding:2rem; border:1px solid rgba(255,255,255,.13); border-radius:24px; background:rgba(255,255,255,.05); }
+      .checkout-card h2 { margin:.3rem 0 1.5rem; }
+      .checkout-card p { color:#a6a9b1; line-height:1.6; }
+      .checkout-card ul { padding:0; list-style:none; color:#d5d6d8; line-height:2; }
+      .checkout-card li::before { content:'✓'; color:#f1efe9; margin-right:.65rem; }
+      .checkout-form { display:grid; gap:1rem; }
+      .checkout-form label { color:#d5d6d8; font-size:.85rem; }
+      .checkout-form input,.checkout-form select { width:100%; margin-top:.4rem; padding:.85rem 1rem; border:1px solid rgba(255,255,255,.16); border-radius:12px; background:#111419; color:#fff; font:inherit; box-sizing:border-box; }
+      .checkout-note { font-size:.78rem; color:#858992; margin-top:1rem; }
+      @media(max-width:720px){.checkout-grid{grid-template-columns:1fr}.checkout{padding-top:4rem}}
+    </style>
+  </head>
+  <body>
+    <nav class="nav"><a class="brand" href="../"><img src="../assets/flowsort-logo.png" alt="" />FlowSort</a><a class="nav-login" href="../login/">Iniciar sesión</a></nav>
+    <main class="checkout">
+      <div class="eyebrow">ACTIVA TU WORKSPACE</div>
+      <h1>Elige cómo quieres empezar.</h1>
+      <div class="checkout-grid">
+        <section class="checkout-card"><div class="eyebrow">PLAN SELECCIONADO</div><h2 id="plan-name">Pro</h2><p id="plan-copy">Para equipos en crecimiento que necesitan visibilidad total.</p><ul id="plan-features"><li>Registros ilimitados</li><li>Colaboración en equipo</li><li>Vistas y filtros prioritarios</li></ul><strong id="plan-price">$39 / mes</strong></section>
+        <section class="checkout-card"><h2>Datos de activación</h2><form class="checkout-form" id="checkout-form"><label>Correo de trabajo<input type="email" required placeholder="tu@empresa.com" /></label><label>Plan<select id="plan-select"><option value="starter">Starter · $12/mes</option><option value="pro">Pro · $39/mes</option><option value="business">Business · $89/mes</option></select></label><button class="button primary" type="submit">Continuar al pago seguro →</button></form><p class="checkout-note">Serás redirigido a un proveedor de pago seguro cuando conectemos facturación. Hasta entonces, esta pantalla reserva tu plan.</p></section>
+      </div>
+    </main>
+    <script>
+      const plans={starter:{name:'Starter',copy:'Para operadores individuales.',price:'$12 / mes',features:['500 registros al mes','Vistas de flujo básicas','Soporte por email']},pro:{name:'Pro',copy:'Para equipos en crecimiento que necesitan visibilidad total.',price:'$39 / mes',features:['Registros ilimitados','Colaboración en equipo','Vistas y filtros prioritarios']},business:{name:'Business',copy:'Control empresarial para organizaciones grandes.',price:'$89 / mes',features:['Todo lo de Pro','Integraciones personalizadas','Garantía SLA']}};
+      const params=new URLSearchParams(location.search); const select=document.querySelector('#plan-select'); const chosen=plans[params.get('plan')]?params.get('plan'):'pro'; select.value=chosen;
+      function render(){const p=plans[select.value]; document.querySelector('#plan-name').textContent=p.name; document.querySelector('#plan-copy').textContent=p.copy; document.querySelector('#plan-price').textContent=p.price; document.querySelector('#plan-features').innerHTML=p.features.map(f=>`<li>${f}</li>`).join('');}
+      select.addEventListener('change',render); render();
+      document.querySelector('#checkout-form').addEventListener('submit',e=>{e.preventDefault(); localStorage.setItem('flowsort_pending_plan',select.value); location.href='../signup/?plan='+select.value;});
+    </script>
+  </body>
+</html>

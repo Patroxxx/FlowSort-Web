@@ -14,7 +14,9 @@ html {
 body {
   margin: 0;
   background:
-    radial-gradient(circle at 80% 0, #30343b 0, transparent 30%), #0b0d10;
+    radial-gradient(circle at 80% 0, #30343b 0, transparent 30%),
+    radial-gradient(circle at 12% 42%, rgba(255,255,255,.06), transparent 24%),
+    linear-gradient(115deg, transparent 0 48%, rgba(255,255,255,.025) 48.1%, transparent 48.3%), #0b0d10;
 }
 .nav {
   height: 78px;
@@ -647,6 +649,61 @@ body.lang-fade-in footer {
   margin: 0 auto;
   padding: 100px 28px;
   border-top: 1px solid #ffffff12;
+}
+
+/* Conversion sections */
+.use-cases { max-width: 1180px; margin: 0 auto; padding: 8rem 2rem 5rem; }
+.section-heading { max-width: 620px; margin-bottom: 2.5rem; }
+.section-heading h2 { margin: .7rem 0 1rem; }
+.section-heading p { color: var(--muted, #9ca3af); max-width: 480px; }
+.use-case-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.use-case-card { min-height: 210px; padding: 1.5rem; border: 1px solid rgba(255,255,255,.11); border-radius: 24px; background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.025)); display: flex; flex-direction: column; justify-content: space-between; transition: transform .25s ease, border-color .25s ease, background .25s ease; }
+.use-case-card:hover { transform: translateY(-5px); border-color: rgba(226,221,211,.42); background: rgba(255,255,255,.1); }
+.use-case-icon { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 13px; background: rgba(255,255,255,.12); color: #f1efe9; font-size: 1.35rem; }
+.use-case-card h3 { margin: 1.5rem 0 .4rem; font-size: 1.25rem; }
+.use-case-card p { margin: 0; color: var(--muted, #9ca3af); font-size: .95rem; }
+.use-case-flow { margin-top: 1.5rem; color: #b8b4aa; font: 600 .7rem/1.2 inherit; letter-spacing: .12em; text-transform: uppercase; }
+.use-case-flow b { color: #f1efe9; padding: 0 .45rem; }
+.portal-banner { max-width: 1180px; margin: 1rem auto 7rem; padding: 2.2rem 2.5rem; border: 1px solid rgba(255,255,255,.14); border-radius: 26px; background: radial-gradient(circle at 80% 20%, rgba(255,255,255,.13), transparent 45%), rgba(255,255,255,.045); display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.portal-banner h2 { max-width: 620px; margin: .65rem 0 .6rem; font-size: clamp(1.8rem, 3vw, 3rem); }
+.portal-banner p { margin: 0; color: var(--muted, #9ca3af); }
+.skip-link { position: fixed; left: 1rem; top: -4rem; z-index: 100; padding: .7rem 1rem; border-radius: 10px; background: #f1efe9; color: #111; font-weight: 700; transition: top .2s ease; }
+.skip-link:focus { top: 1rem; }
+.faq { max-width: 900px; margin: 0 auto; padding: 1rem 2rem 7rem; }
+.faq-list { border-top: 1px solid rgba(255,255,255,.14); }
+.faq details { border-bottom: 1px solid rgba(255,255,255,.14); padding: 1.25rem 0; }
+.faq summary { cursor: pointer; list-style: none; font-size: 1.1rem; font-weight: 650; display: flex; justify-content: space-between; gap: 1rem; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; color: #aaa79e; font-size: 1.35rem; }
+.faq details[open] summary::after { content: "−"; }
+.faq details p { max-width: 680px; margin: .85rem 2rem 0 0; color: var(--muted, #9ca3af); line-height: 1.65; }
+.lite-download { position: relative; overflow: hidden; max-width: 1180px; margin: 0 auto 7rem; padding: 2.8rem 3rem; border-radius: 30px; border: 1px solid rgba(255,255,255,.14); display: flex; align-items: center; justify-content: space-between; gap: 3rem; background: radial-gradient(circle at 90% 10%, rgba(255,255,255,.16), transparent 28%), linear-gradient(120deg, rgba(255,255,255,.08), rgba(255,255,255,.02)); box-shadow: 0 22px 70px rgba(0,0,0,.2); }
+.lite-download::before { content: ""; position: absolute; width: 280px; height: 280px; right: 120px; bottom: -220px; border: 1px solid rgba(255,255,255,.16); border-radius: 50%; box-shadow: 0 0 0 30px rgba(255,255,255,.025), 0 0 0 60px rgba(255,255,255,.018); }
+.lite-copy { position: relative; z-index: 1; max-width: 650px; }
+.lite-download h2 { margin: .55rem 0 .6rem; font-size: clamp(1.7rem, 2.8vw, 2.7rem); }
+.lite-download p { color: var(--muted, #aeb1b8); margin: 0; max-width: 560px; line-height: 1.6; }
+.lite-points { display: flex; gap: 1.5rem; margin-top: 1.7rem; }
+.lite-points span { display: flex; align-items: center; gap: .55rem; color: #c7c8ca; }
+.lite-points b { color: #f1efe9; font: 700 .65rem/1 inherit; letter-spacing: .1em; }
+.lite-points small { font-size: .78rem; }
+.lite-action { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; gap: .7rem; min-width: 190px; }
+.lite-action small { color: #858992; font-size: .7rem; letter-spacing: .08em; }
+.lite-orbit { display: grid; place-items: center; width: 96px; height: 96px; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; box-shadow: 0 0 0 12px rgba(255,255,255,.035), 0 0 0 24px rgba(255,255,255,.018); animation: lite-float 5s ease-in-out infinite; }
+.lite-orbit img { width: 54px; height: 54px; object-fit: contain; }
+@keyframes lite-float { 50% { transform: translateY(-7px) rotate(4deg); } }
+footer a { color: inherit; text-decoration: none; }
+footer a:hover { color: #fff; }
+
+@media (max-width: 760px) {
+  .use-cases { padding: 5rem 1.25rem 3rem; }
+  .use-case-grid { grid-template-columns: 1fr; }
+  .use-case-card { min-height: 175px; }
+  .portal-banner { margin: 1rem 1.25rem 4rem; padding: 1.6rem; align-items: flex-start; flex-direction: column; }
+  .portal-banner .button { width: 100%; text-align: center; }
+  .faq { padding: 1rem 1.25rem 4rem; }
+  .lite-download { margin: 0 1.25rem 4rem; padding: 1.8rem 1.4rem; align-items: flex-start; flex-direction: column; gap: 2rem; }
+  .lite-points { flex-wrap: wrap; gap: .8rem 1.2rem; }
+  .lite-download .button { width: 100%; text-align: center; }
 }
 
 .pricing-header {

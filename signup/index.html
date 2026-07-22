@@ -234,7 +234,8 @@
 
             // Redirect back to login with success parameter
             setTimeout(() => {
-              window.location.href = "../login/?signup=success";
+              const plan = new URLSearchParams(window.location.search).get("plan") || localStorage.getItem("flowsort_pending_plan") || "pro";
+              window.location.href = "../checkout/?plan=" + encodeURIComponent(plan) + "&signup=complete";
             }, 800);
           } catch (err) {
             showAlert("Encryption failed. Please try again.", "error");
